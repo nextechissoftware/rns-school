@@ -1,0 +1,564 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edu School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.show {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+     <!------------------------------------ Header------------------------ -->
+     <section class="bg-gray-900 text-white">
+        <header class="container mx-auto px-4 md:px-40 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-amber-500 rounded-md flex items-center justify-center rotate-12">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="-rotate-12">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <span class="text-2xl font-bold">Edu School</span>
+            </a>
+            <nav class="flex md:hidden items-center gap-6">
+                <button class="text-amber-500 hover:text-amber-400" id="menu-btn">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 6H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 12H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 18H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </nav>
+            <nav class="hidden md:flex items-center gap-6">
+                <a href="#" class="text-amber-500 hover:text-amber-400">Home</a>
+                <a href="#" class="hover:text-amber-400">Courses</a>
+                <a href="#" class="hover:text-amber-400">Blog</a>
+                <a href="#" class="hover:text-amber-400">Contact</a>
+            </nav>
+        </header>
+    
+        <!-- Mobile Menu -->
+        <div class="mobile-menu fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center space-y-6 text-white bg-gray-900 shadow-lg z-50" id="mobile-menu">
+            <button id="close-menu" class="absolute top-5 right-6 text-3xl text-white hover:text-gray-400">
+                &times;
+            </button>
+            <a href="#" class="text-xl font-semibold hover:text-amber-400 transition">Home</a>
+            <a href="#" class="text-xl hover:text-amber-400 transition">Courses</a>
+            <a href="#" class="text-xl hover:text-amber-400 transition">Blog</a>
+            <a href="#" class="text-xl hover:text-amber-400 transition">Contact</a>
+        </div>
+    
+        <section class="relative min-h-[100vh] flex flex-col md:flex-row items-center text-center md:text-left px-4 md:px-40">
+            <div class="absolute inset-0">
+                <div class="absolute inset-0 bg-black/85"></div>
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=80" alt="School building" class="w-full h-full object-cover" />
+            </div>
+            
+            <div class="relative z-10 container mx-auto flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 space-y-6">
+                    <h1 class="text-4xl md:text-7xl mt-10 font-bold">
+                        Your Kids <br /> Deserve The <br /> <span class="text-blue-400">Best Education</span>
+                    </h1>
+                    <p class="text-lg text-gray-300">Active Learning, Expert Teachers & Safe Environment</p>
+                    <a href="#" class="inline-block px-6 py-3 bg-amber-500 text-white font-semibold rounded-full hover:bg-amber-600 transition">
+                        Admission Now
+                    </a>
+                </div>
+                
+                <div class="w-full md:w-1/2 mt-8 md:mt-0 flex justify-center">
+                    <div class="relative w-96 h-96 md:w-144 md:h-144">
+                        <img src="./assets/boy.png" alt="Student with backpack" class="w-full h-full object-contain">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <script>
+            const menuBtn = document.getElementById('menu-btn');
+            const closeBtn = document.getElementById('close-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+    
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('show');
+            });
+    
+            closeBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('show');
+            });
+    
+            // Close when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                    mobileMenu.classList.remove('show');
+                }
+            });
+        </script>
+     </section>
+    <!------------------------------------ Section 2------------------------ -->
+    <section class="bg-gray-900 text-white px-6 md:px-20 lg:px-40 py-0">
+        <div class="container mx-auto px-4 py-16 fade-in">
+            <div class="text-center mb-12">
+                <p class="text-green-400 uppercase tracking-widest">Best Features</p>
+                <h1 class="text-2xl md:text-4xl font-bold mt-2">Achieve Your Goals With Edu School</h1>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div
+                    class="bg-gray-800 p-6 rounded-lg text-center transform transition duration-300 hover:scale-105 hover:shadow-lg">
+                    <div class="text-red-500 text-4xl mb-4">
+                        <i class="fas fa-chalkboard-teacher transition duration-300 hover:text-red-400"></i>
+                    </div>
+                    <h2 class="text-lg md:text-xl font-semibold mb-2">Expert Teachers</h2>
+                    <p class="text-gray-400">Ras efficitur metus velis suscipit consectetur adipiscing elit.</p>
+                </div>
+                <div
+                    class="bg-gray-800 p-6 rounded-lg text-center transform transition duration-300 hover:scale-105 hover:shadow-lg">
+                    <div class="text-blue-500 text-4xl mb-4">
+                        <i class="fas fa-book transition duration-300 hover:text-blue-400"></i>
+                    </div>
+                    <h2 class="text-lg md:text-xl font-semibold mb-2">Quality Education</h2>
+                    <p class="text-gray-400">Ras efficitur metus velis suscipit consectetur adipiscing elit.</p>
+                </div>
+                <div
+                    class="bg-gray-800 p-6 rounded-lg text-center transform transition duration-300 hover:scale-105 hover:shadow-lg">
+                    <div class="text-yellow-500 text-4xl mb-4">
+                        <i class="fas fa-life-ring transition duration-300 hover:text-yellow-400"></i>
+                    </div>
+                    <h2 class="text-lg md:text-xl font-semibold mb-2">Life Time Support</h2>
+                    <p class="text-gray-400">Ras efficitur metus velis suscipit consectetur adipiscing elit.</p>
+                </div>
+                <div
+                    class="bg-gray-800 p-6 rounded-lg text-center transform transition duration-300 hover:scale-105 hover:shadow-lg">
+                    <div class="text-green-500 text-4xl mb-4">
+                        <i class="fas fa-university transition duration-300 hover:text-green-400"></i>
+                    </div>
+                    <h2 class="text-lg md:text-xl font-semibold mb-2">Best Scholarships</h2>
+                    <p class="text-gray-400">Ras efficitur metus velis suscipit consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center fade-in">
+                <div class="relative">
+                    <!-- Image -->
+                    <img alt="Group of happy students holding a sign that says 'We are happy to be here'"
+                        class="rounded-lg transition duration-500 hover:shadow-2xl w-full h-auto" 
+                        src="./assets/Sec_2_Childrens.jpg" />
+                
+                    <!-- Responsive Overlay -->
+                    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[90%] bg-gray-800 p-4 md:p-6 rounded-lg fade-in 
+                                shadow-lg backdrop-blur-md bg-opacity-90 
+                                text-center md:text-left md:left-40 md:w-auto md:transform-none">
+                        <h3 class="text-sm md:text-xl font-semibold mb-2">Get an Appointment Today!</h3>
+                        <p class="text-gray-400 mb-3 text-xs md:text-base">
+                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        </p>
+                        <p class="text-yellow-500 text-sm md:text-lg font-semibold flex items-center justify-center md:justify-start">
+                            <i class="fas fa-phone-alt mr-2"></i> 1-800-654-3210
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">We Are The Best Choice For Your Child</h2>
+                    <p class="text-gray-400 mb-4">Lorem ipsum vivamus feugiat. Pellentesque libero justo, ultricies sit
+                        ligula. Suspendisse tempor malesuada.</p>
+                    <ul class="list-disc list-inside text-gray-400 mb-4">
+                        <li>Special Education</li>
+                        <li>Access more than 100K online courses</li>
+                        <li>Traditional Academies</li>
+                    </ul>
+                    <button
+                        class="bg-yellow-500 text-gray-900 font-semibold py-2 px-6 rounded-lg hover:bg-yellow-600 transition duration-300 hover:shadow-lg">Apply
+                        Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!------------------------------------ Section 3------------------------ -->
+
+    <section class="bg-black text-white px-6 md:px-20 lg:px-40 py-0">
+        <div class="container mx-auto px-4 py-16">
+
+            <div class="text-center mb-12">
+                <p class="text-green-400 uppercase tracking-widest">Best Courses</p>
+                <h1 class="text-2xl md:text-4xl font-bold mt-2">Find The Right Course For You</h1>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Card 1 -->
+                <div
+                    class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                    <img alt="Children in an educational program" class="w-full h-48 object-cover" height="400"
+                        src="./assets/sec_3_card_1.jpg"
+                        width="600" />
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-teal-500 text-xs text-white font-semibold px-2 py-1 rounded">
+                                Art &amp; Design
+                            </span>
+                            <div class="flex items-center text-yellow-400">
+                                <i class="fas fa-star">
+                                </i>
+                                <span class="ml-1">
+                                    4.5
+                                </span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">
+                            Educational Programs
+                        </h3>
+                        <p class="text-gray-400 mb-4">
+                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold">
+                                $42.00
+                            </span>
+                            <a class="text-teal-500 hover:underline" href="#">
+                                Know Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                    <img alt="Children meditating in a class" class="w-full h-48 object-cover" height="400"
+                        src="./assets/sec_3_card_2.jpg"
+                        width="600" />
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-yellow-500 text-xs text-white font-semibold px-2 py-1 rounded">
+                                Meditation
+                            </span>
+                            <div class="flex items-center text-yellow-400">
+                                <i class="fas fa-star">
+                                </i>
+                                <span class="ml-1">
+                                    4.3
+                                </span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">
+                            Best Meditation Classes
+                        </h3>
+                        <p class="text-gray-400 mb-4">
+                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold">
+                                $36.00
+                            </span>
+                            <a class="text-teal-500 hover:underline" href="#">
+                                Know Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                    <img alt="Children playing games in a program" class="w-full h-48 object-cover" height="400"
+                        src="./assets/sec_3_card_3.jpg"
+                        width="600" />
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-blue-500 text-xs text-white font-semibold px-2 py-1 rounded">
+                                Games
+                            </span>
+                            <div class="flex items-center text-yellow-400">
+                                <i class="fas fa-star">
+                                </i>
+                                <span class="ml-1">
+                                    4.2
+                                </span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">
+                            Games Program in a Week
+                        </h3>
+                        <p class="text-gray-400 mb-4">
+                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold">
+                                $30.00
+                            </span>
+                            <a class="text-teal-500 hover:underline" href="#">
+                                Know Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <button
+                    class="bg-yellow-500 text-gray-900 font-semibold py-2 px-6 rounded-full hover:bg-yellow-600 transition-all duration-300 transform hover:scale-105">
+                    Browse more courses
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!------------------------------------ Section 4------------------------ -->
+    <section class="bg-gray-900 text-white px-6 md:px-20 lg:px-40 py-0">
+        <div class="container mx-auto px-4 py-16">
+            <div class="text-center mb-12">
+                <p class="text-green-400 uppercase tracking-widest">WHY CHOOSE US</p>
+                <h1 class="text-2xl md:text-4xl font-bold mt-2">Tools For Teachers And Learners</h1>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="relative transform transition duration-300 hover:scale-105">
+                    <img alt="Teacher in a classroom with students raising hands"
+                        class="w-full h-full object-cover rounded-lg" height="400"
+                        src="./assets/sec4_card_1.jpg"
+                        width="600" />
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg fade-in">
+                        <span class="text-xl font-bold text-white">Expert Teachers</span>
+                    </div>
+                </div>
+                <div class="relative transform transition duration-300 hover:scale-105">
+                    <img alt="Students in a safe learning environment" class="w-full h-full object-cover rounded-lg"
+                        height="400"
+                        src="./assets/sec4_card_2.jpg"
+                        width="600" />
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg fade-in">
+                        <span class="text-xl font-bold text-white">Safe Environment</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mb-12 fade-in">
+                <p class="text-green-400 uppercase tracking-widest">OUR STATISTICS</p>
+                <h1 class="text-2xl md:text-4xl font-bold mt-2">We are Proud to Share with You</h1>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="transition duration-300 hover:scale-110">
+                    <i class="fas fa-users text-4xl text-pink-500 mb-2"></i>
+                    <h3 class="text-xl md:text-2xl font-bold">36,076</h3>
+                    <p class="text-gray-400">Students Enrolled</p>
+                </div>
+                <div class="transition duration-300 hover:scale-110">
+                    <i class="fas fa-building text-4xl text-green-500 mb-2"></i>
+                    <h3 class="text-xl md:text-2xl font-bold">786</h3>
+                    <p class="text-gray-400">Our Branches</p>
+                </div>
+                <div class="transition duration-300 hover:scale-110">
+                    <i class="fas fa-book text-4xl text-red-500 mb-2"></i>
+                    <h3 class="text-xl md:text-2xl font-bold">3,630</h3>
+                    <p class="text-gray-400">Total Courses</p>
+                </div>
+                <div class="transition duration-300 hover:scale-110">
+                    <i class="fas fa-award text-4xl text-blue-500 mb-2"></i>
+                    <h3 class="text-xl md:text-2xl font-bold">6,300</h3>
+                    <p class="text-gray-400">Awards Won</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!------------------------------------ Section 5------------------------ -->
+    <section class="bg-blue-500 flex items-center justify-center h-[300px] relative overflow-hidden">
+        <img alt="Background image of children and a teacher in a classroom"
+            class="absolute inset-0 w-full h-full object-cover opacity-50 animate-fadeIn"
+            src="./assets/sec5_bg.jpg" />
+
+        <div
+            class="relative text-center text-white p-6 bg-blue-500 bg-opacity-75 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+            <img alt="Portrait of Petey Cru" class="w-20 h-20 rounded-full mx-auto mb-4 shadow-md"
+                src="./assets/sec5_person_logo.jpg" />
+
+            <p class="text-lg italic mb-4 drop-shadow-md">
+                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                rem aperiam."
+            </p>
+
+            <p class="font-bold text-xl drop-shadow-lg">
+                - Petey Cru
+            </p>
+        </div>
+    </section>
+
+    <!------------------------------------ Section 6------------------------ -->
+
+    <section class="bg-gray-900 text-white px-6 md:px-20 lg:px-40 py-0">
+        <div class="container mx-auto py-12">
+
+            <div class="text-center mb-12">
+                <p class="text-green-400 uppercase tracking-widest">OUR NEWS</p>
+                <h1 class="text-2xl md:text-4xl font-bold mt-2">Latest Blog Posts</h1>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+                    <img alt="Children in a classroom participating in educational activities" class="w-full h-48 object-cover" src="./assets/sec6_blog1_main.jpg"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Education Programs...</h3>
+                        <p class="text-gray-400 mb-4">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+                        <div class="flex items-center">
+                            <img alt="Profile picture of Betsy Cruz" class="w-8 h-8 rounded-full mr-2" src="./assets/sec6_blog1_logo.jpg"/>
+                            <div class="text-sm">
+                                <p class="text-gray-400">Betsy Cruz</p>
+                                <p class="text-gray-500"><i class="fas fa-calendar-alt"></i> Jan 08, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Post 2 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+                    <img alt="Child playing with toys on a green mat" class="w-full h-48 object-cover" src="./assets/sec6_blog2_main.jpg"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Games Programs...</h3>
+                        <p class="text-gray-400 mb-4">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+                        <div class="flex items-center">
+                            <img alt="Profile picture of Melvin Joe" class="w-8 h-8 rounded-full mr-2" src="./assets/sec6_blog2_logo.jpg"/>
+                            <div class="text-sm">
+                                <p class="text-gray-400">Melvin Joe</p>
+                                <p class="text-gray-500"><i class="fas fa-calendar-alt"></i> Jan 20, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Post 3 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+                    <img alt="Two children holding alphabet letters" class="w-full h-48 object-cover" src="./assets/sec6_blog3_main.jpg"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Articles Programs...</h3>
+                        <p class="text-gray-400 mb-4">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+                        <div class="flex items-center">
+                            <img alt="Profile picture of Tunnie Leo" class="w-8 h-8 rounded-full mr-2" src="./assets/sec6_blog3_logo.jpg"/>
+                            <div class="text-sm">
+                                <p class="text-gray-400">Tunnie Leo</p>
+                                <p class="text-gray-500"><i class="fas fa-calendar-alt"></i> Feb 12, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <button class="bg-yellow-500 text-gray-900 font-semibold py-2 px-6 rounded-full hover:bg-yellow-600 transition duration-300">Read More Blogs</button>
+            </div>
+        </div>
+    </section>
+    
+    <!------------------------------------ Section 7------------------------ -->
+    <section class="bg-gradient-to-r from-blue-600 to-blue-400 text-white px-6 md:px-20 lg:px-40 py-4">
+        <div class="flex flex-col md:flex-row justify-between items-center p-4 md:p-6 bg-opacity-90 rounded-lg shadow-lg">
+            <div class="text-center md:text-left mb-4 md:mb-0">
+                <h1 class="text-lg md:text-xl font-bold">CALL TO ENROLL YOUR CHILD</h1>
+                <p class="text-sm text-gray-200">Begin the change today!</p>
+            </div>
+            <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+                <div class="flex items-center space-x-2 text-lg">
+                    <i class="fas fa-phone-alt"></i>
+                    <span class="font-semibold tracking-wide">+1 (234) 456-7890</span>
+                </div>
+                <a href="tel:+1234567890" class="bg-black text-white font-semibold py-2 px-5 rounded-full hover:bg-gray-800 transition duration-300">
+                    Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!------------------------------------ Footer------------------------ -->
+    <footer class="bg-gray-900 text-white px-6 md:px-20 lg:px-40 py-8">
+        <section class="py-10">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Contact Info -->
+                    <div>
+                        <h2 class="text-lg font-semibold mb-4">Contact Info</h2>
+                        <p>Edu School, 10001, 5th Avenue #06</p>
+                        <p>New York NY - 62617</p>
+                        <p>📞 +1 (021) 234-4567</p>
+                        <p>📧 info@example.com</p>
+                    </div>
+                    <!-- Quick Links -->
+                    <div>
+                        <h2 class="text-lg font-semibold mb-4">Quick Links</h2>
+                        <ul>
+                            <li class="mb-2"><a href="#" class="hover:text-blue-400 transition">About Us</a></li>
+                            <li class="mb-2"><a href="#" class="hover:text-blue-400 transition">Courses</a></li>
+                            <li class="mb-2"><a href="#" class="hover:text-blue-400 transition">Become a Teacher</a></li>
+                            <li class="mb-2"><a href="#" class="hover:text-blue-400 transition">Contact Us</a></li>
+                            <li class="mb-2"><a href="#" class="hover:text-blue-400 transition">Career</a></li>
+                        </ul>
+                    </div>
+                    <!-- Explore -->
+                    <div>
+                        <h2 class="text-lg font-semibold mb-4">Explore</h2>
+                        <ul>
+                            <li class="mb-2"><a href="#" class="hover:text-blue-400 transition">Blog Posts</a></li>
+                            <li class="mb-2"><a href="#" class="hover:text-blue-400 transition">Privacy Policy</a></li>
+                            <li class="mb-2"><a href="#" class="hover:text-blue-400 transition">Contact Us</a></li>
+                            <li class="mb-2"><a href="#" class="hover:text-blue-400 transition">License & Uses</a></li>
+                            <li class="mb-2"><a href="#" class="hover:text-blue-400 transition">Tutorials</a></li>
+                        </ul>
+                    </div>
+                    <!-- Subscribe -->
+                    <div>
+                        <h2 class="text-lg font-semibold mb-4">Subscribe</h2>
+                        <form class="flex">
+                            <input type="email" placeholder="Email Address" class="w-full px-4 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-900">
+                            <button type="submit" class="bg-blue-500 px-4 py-2 rounded-r-md hover:bg-blue-600 transition">
+                                <i class="fas fa-paper-plane text-white"></i>
+                            </button>
+                        </form>
+                        <p class="mt-4 text-gray-400">Subscribe for the latest updates directly in your inbox.</p>
+                    </div>
+                </div>
+                <!-- Footer Bottom -->
+                <div class="text-center mt-10 border-t border-gray-700 pt-6">
+                    <p class="text-gray-400">© 2025 Edu School. All rights reserved. Designed by <a href="#" class="text-blue-500 hover:underline">Krish Yadav</a></p>
+                </div>
+            </div>
+        </section>
+    </footer>
+    
+    <script>
+        document.getElementById('menuBtn').addEventListener('click', function () {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+
+</html>
