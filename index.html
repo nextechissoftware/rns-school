@@ -6,6 +6,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <!-- Bootstrap JS (v5) and jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <style>
         @keyframes fadeIn {
             from {
@@ -45,13 +49,11 @@
      <section class="bg-gray-900 text-white">
         <header class="container mx-auto px-4 md:px-40 py-4 flex items-center justify-between">
             <a href="#" class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-amber-500 rounded-md flex items-center justify-center rotate-12">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="-rotate-12">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
+               
+                 <div class="h-14 w-14 md:h-16 md:w-16 rounded-full overflow-hidden border-2 border-white flex-shrink-0">
+                 <img src="assets/logo.jpeg" alt="Logo" class="w-full h-full object-cover" />
+                  </div>
+
                 <span class="text-2xl font-bold">Shaheed RNS Education Academy</span>
             </a>
             <nav class="flex md:hidden items-center gap-6">
@@ -65,7 +67,7 @@
             </nav>
             <nav class="hidden md:flex items-center gap-6">
                 <a href="#" class="text-amber-500 hover:text-amber-400">Home</a>
-                <a href="#" class="hover:text-amber-400">Courses</a>
+                <a href="events-gallery.html" class="hover:text-amber-400">Events Gallery</a>
                 <a href="mandatory-public-disclosure.html" class="hover:text-amber-400 transition">Certificates</a>
                 <a href="#" class="hover:text-amber-400">Blog</a>
                 <a href="#" class="hover:text-amber-400">Contact</a>
@@ -78,7 +80,7 @@
                 &times;
             </button>
             <a href="#" class="text-xl font-semibold hover:text-amber-400 transition">Home</a>
-            <a href="#" class="text-xl hover:text-amber-400 transition">Courses</a>
+            <a href="events-gallery.html" class="text-xl hover:text-amber-400 transition">Events Gallery</a>
             <a href="mandatory-public-disclosure.html" class="text-xl hover:text-amber-400 transition">Certificates</a>
             <a href="#" class="text-xl hover:text-amber-400 transition">Blog</a>
             <a href="#" class="text-xl hover:text-amber-400 transition">Contact</a>
@@ -96,7 +98,7 @@
                         Your Kids <br /> Deserve The <br /> <span class="text-blue-400">Best Education</span>
                     </h1>
                     <p class="text-lg text-gray-300">Active Learning, Expert Teachers & Safe Environment</p>
-                    <a href="#" class="inline-block px-6 py-3 bg-amber-500 text-white font-semibold rounded-full hover:bg-amber-600 transition">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScKyroS4curaZ-CPWBVwRnpxbc-LHLPjHT060yNLX_Tu3asTQ/viewform?usp=preview" class="inline-block px-6 py-3 bg-amber-500 text-white font-semibold rounded-full hover:bg-amber-600 transition">
                         Admission Now
                     </a>
                 </div>
@@ -394,28 +396,231 @@
             </div>
         </div>
     </section>
+ <!------------------------------------ Director Message Review------------------------ -->
+<section class="bg-black text-white px-6 md:px-20 lg:px-40 py-12 md:py-20 relative overflow-hidden">
 
-    <!------------------------------------ Section 5------------------------ -->
-    <section class="bg-blue-500 flex items-center justify-center h-[300px] relative overflow-hidden">
-        <img alt="Background image of children and a teacher in a classroom"
-            class="absolute inset-0 w-full h-full object-cover opacity-50 animate-fadeIn"
-            src="./assets/sec5_bg.jpg" />
-
-        <div
-            class="relative text-center text-white p-6 bg-blue-500 bg-opacity-75 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
-            <img alt="Portrait of Petey Cru" class="w-20 h-20 rounded-full mx-auto mb-4 shadow-md"
-                src="./assets/sec5_person_logo.jpg" />
-
-            <p class="text-lg italic mb-4 drop-shadow-md">
-                "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                rem aperiam."
-            </p>
-
-            <p class="font-bold text-xl drop-shadow-lg">
-                - Petey Cru
-            </p>
+  <!-- Message Wrapper 1: Director -->
+  <div class="message-slide">
+    <div class="flex flex-col md:flex-row items-center md:items-start md:gap-x-12 py-10">
+      <!-- Director Picture Left -->
+      <div class="w-48 h-48 md:w-56 md:h-56 flex-shrink-0 text-center">
+        <img
+          src="assets/Director.jpeg"
+          alt="Director"
+          class="w-full h-full object-cover rounded-full border-4 border-gray-300"
+        />
+        <div class="mt-3">
+          <h3 class="text-xl md:text-2xl font-bold text-sky-300">KAUSHLENDRA SINGH</h3>
+          <p class="text-base text-gray-400">Director</p>
         </div>
-    </section>
+      </div>
+
+      <!-- Director Message Right -->
+      <div class="mt-8 md:mt-0 md:flex-1 md:ml-8">
+        <div class="bg-gray-800 shadow-lg rounded-2xl p-8 md:p-10 border border-gray-200 text-lg">
+          <h2 class="text-sky-400 text-2xl font-semibold mb-4">Message from the Director</h2>
+          <p class="leading-relaxed mb-4">
+            "Education is not just about textbooks and exams; it is about shaping responsible, compassionate, and confident individuals who are ready to face the world with courage and kindness."
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Message Wrapper 2: Principal (Initially Hidden) -->
+  <div class="message-slide hidden">
+    <div class="flex flex-col md:flex-row items-center md:items-start md:gap-x-12 py-10">
+      <!-- Principal Message Left -->
+      <div class="md:flex-1 order-2 md:order-1 mt-8 md:mt-0 md:mr-8">
+        <div class="bg-gray-800 shadow-lg rounded-2xl p-8 md:p-10 border border-gray-200 text-lg">
+          <h2 class="text-sky-400 text-2xl font-semibold mb-4">Message from the Principal</h2>
+          <p class="leading-relaxed mb-4">
+           "Education is the key that unlocks the door to endless possibilities. Our mission is to ignite curiosity, foster creativity, and empower every student to become a confident thinker and a lifelong learner who can make a positive impact."
+          </p>
+          
+        </div>
+      </div>
+
+      <!-- Principal Picture Right -->
+      <div class="w-48 h-48 md:w-56 md:h-56 flex-shrink-0 order-1 md:order-2 text-center">
+        <img
+          src="assets/Principle.jpeg"
+          alt="Principle"
+          class="w-full h-full object-cover rounded-full border-4 border-gray-300"
+        />
+        <div class="mt-3">
+          <h3 class="text-xl md:text-2xl font-bold text-sky-300">CHITRANKA CHAUHAN</h3>
+          <p class="text-base text-gray-400">Principal</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Arrow Buttons -->
+  <button id="prevMessage"
+    class="absolute top-1/2 left-2 transform -translate-y-1/2 text-sky-400 bg-sky-400 bg-opacity-10 hover:bg-opacity-30 rounded-full p-2 text-2xl transition">
+    ←
+  </button>
+  <button id="nextMessage"
+    class="absolute top-1/2 right-2 transform -translate-y-1/2 text-sky-400 bg-sky-400 bg-opacity-10 hover:bg-opacity-30 rounded-full p-2 text-2xl transition">
+    →
+  </button>
+
+
+
+</section>
+
+  <script>    // Director Message Slider
+    (function() {
+        const slides = document.querySelectorAll(".message-slide");
+        const prevMessageBtn = document.getElementById("prevMessage");
+        const nextMessageBtn = document.getElementById("nextMessage");
+
+        let messageIndex = 0;
+        let slideInterval;
+        let delayTimeout;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle("hidden", i !== index);
+            });
+        }
+
+        function startAutoSlide(interval = 2000) {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => {
+                messageIndex = (messageIndex + 1) % slides.length;
+                showSlide(messageIndex);
+            }, interval);
+        }
+
+        function resetWithDelay() {
+            clearInterval(slideInterval);
+            clearTimeout(delayTimeout);
+            delayTimeout = setTimeout(() => {
+                startAutoSlide(2000); // Resume auto-slide after 10s
+            }, 10000);
+        }
+
+        if (prevMessageBtn && nextMessageBtn) {
+            prevMessageBtn.addEventListener("click", () => {
+                messageIndex = (messageIndex - 1 + slides.length) % slides.length;
+                showSlide(messageIndex);
+                resetWithDelay();
+            });
+
+            nextMessageBtn.addEventListener("click", () => {
+                messageIndex = (messageIndex + 1) % slides.length;
+                showSlide(messageIndex);
+                resetWithDelay();
+            });
+        }
+
+        if (slides.length > 0) {
+            showSlide(messageIndex);
+            startAutoSlide();
+        }
+    })();
+</script>
+
+
+    <!------------------------------------ Section parents Review------------------------ -->
+  <section class="bg-blue-500 flex items-center justify-center h-[300px] relative overflow-hidden">
+  <!-- Background Image -->
+  <img alt="Background image of children and a teacher in a classroom"
+    class="absolute inset-0 w-full h-full object-cover opacity-50 animate-fadeIn"
+    src="./assets/sec5_bg.jpg" />
+
+  <!-- Arrow Buttons Outside -->
+  <button id="prevBtn"
+    class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-blue-500 rounded-full p-3 shadow-lg z-10">
+    &#8592;
+  </button>
+
+  <button id="nextBtn"
+    class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-blue-500 rounded-full p-3 shadow-lg z-10">
+    &#8594;
+  </button>
+
+  <!-- Broader Testimonials Container -->
+  <div class="relative w-full max-w-3xl text-center text-white px-4">
+    <div id="testimonial-wrapper" class="relative">
+      <!-- Testimonial 1 -->
+      <div class="testimonial relative p-6 bg-blue-500 bg-opacity-75 rounded-lg shadow-lg transition duration-300" data-index="0">
+        <img src="./assets/sec5_person_logo.jpg" alt="Portrait of Petey Cru" class="w-20 h-20 rounded-full mx-auto mb-4 shadow-md" />
+        <p class="text-lg italic mb-4 drop-shadow-md">
+          "We couldn't be happier with the growth we've seen in our child since joining this school. The teachers are not only qualified but genuinely care about every child. The focus on both academics and values is commendable."
+        </p>
+        <p class="font-bold text-xl drop-shadow-lg">- VED SHARMA </p>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial hidden relative p-6 bg-blue-500 bg-opacity-75 rounded-lg shadow-lg transition duration-300" data-index="1">
+        <img src="./assets/sec5_person_logo.jpg" alt="Portrait of Petey Cru" class="w-20 h-20 rounded-full mx-auto mb-4 shadow-md" />
+        <p class="text-lg italic mb-4 drop-shadow-md">
+          "My daughter looks forward to school every day! The environment is warm and nurturing, and the activities are well thought out. We've noticed huge improvements in her confidence and communication."
+        </p>
+        <p class="font-bold text-xl drop-shadow-lg">- SHALINI SINGH</p>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial hidden relative p-6 bg-blue-500 bg-opacity-75 rounded-lg shadow-lg transition duration-300" data-index="2">
+        <img src="./assets/sec5_person_logo.jpg" alt="Portrait of Petey Cru" class="w-20 h-20 rounded-full mx-auto mb-4 shadow-md" />
+        <p class="text-lg italic mb-4 drop-shadow-md">
+          "As new parents to the school, we were nervous about the transition. But the staff made us feel welcomed from day one. Clear communication, organized events, and personalized attention really make a difference"
+        </p>
+        <p class="font-bold text-xl drop-shadow-lg">- SATYAM PANDEY</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  $(document).ready(function () {
+    const testimonialsAuto = $('.testimonial');
+    let currentTestimonialIndex = 0;
+    let autoSlideInterval;
+
+    function showTestimonialAuto(index) {
+      testimonialsAuto.addClass('hidden');
+      testimonialsAuto.eq(index).removeClass('hidden');
+    }
+
+    function nextTestimonialAuto() {
+      currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialsAuto.length;
+      showTestimonialAuto(currentTestimonialIndex);
+    }
+
+    function prevTestimonialAuto() {
+      currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonialsAuto.length) % testimonialsAuto.length;
+      showTestimonialAuto(currentTestimonialIndex);
+    }
+
+    $('#nextBtn').click(function () {
+      nextTestimonialAuto();
+      resetAutoPlayTimer();
+    });
+
+    $('#prevBtn').click(function () {
+      prevTestimonialAuto();
+      resetAutoPlayTimer();
+    });
+
+    function startAutoPlayTestimonials() {
+      autoSlideInterval = setInterval(nextTestimonialAuto, 5000); // change every 5 seconds
+    }
+
+    function resetAutoPlayTimer() {
+      clearInterval(autoSlideInterval);
+      startAutoPlayTestimonials();
+    }
+
+    // Initialize
+    showTestimonialAuto(currentTestimonialIndex);
+    startAutoPlayTestimonials();
+  });
+</script>
+
 
     <!------------------------------------ Section 6------------------------ -->
 

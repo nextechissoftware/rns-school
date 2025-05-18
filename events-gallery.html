@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/viewerjs/dist/viewer.min.css">
+    <!-- <link rel="stylesheet" href="css.css"> -->
+    <title>Image Gallery</title>
+    <style>
+        /* .viewer-canvas {
+            position: fixed;
+        }
+        .viewer-transition{
+            transform: none !important;
+        }
+        .viewer-list{
+            transform:none !important;
+            width: 200px !important;
+            display: flex;
+            flex-direction: column;
+            padding-left: 10px;
+            height: 100%;
+            position: relative;
+        }
+        .viewer-navbar{
+            width: 200px;
+            padding-left: 40px;
+        
+        }
+        .viewer-toolbar{
+            position: fixed;
+            z-index: 1;
+        }
+        .viewer-footer{
+            position: relative;
+            width: 200px;
+            height: 100%;
+
+        }
+        .viewer-list li {
+            width: 200px;
+            height: 200px;
+            margin-top: 10px;
+        }
+        .viewer-list li img{
+            width: 200px;
+            height: 200px;
+        }
+        .viewer-prev{
+            -webkit-transform: rotate(90deg);
+            border: 1px solid red;
+            padding: 10px;
+        } */
+        .gallery_image{ 
+            width: 24.7%;
+            height: 350px;
+        }
+        .viewer-canvas{
+            background-color: black;
+        }
+        @media (max-width: 450px) {
+            .gallery_image{
+                width: 49%;
+            }
+        }
+        </style>
+</head>
+<body bgcolor="black">
+    <div class="gallery">
+        <img class="gallery_image" src="assets/gallery/img1.jpg" alt="Image 1" class="img-thumbnail">
+        <img class="gallery_image" src="assets/gallery/img2.jpg" alt="Image 1" class="img-thumbnail">
+        <img class="gallery_image" src="assets/gallery/img3.jpg" alt="Image 1" class="img-thumbnail">
+        <img class="gallery_image" src="assets/gallery/img4.jpg" alt="Image 1" class="img-thumbnail">
+        <img class="gallery_image" src="assets/gallery/img5.jpg" alt="Image 1" class="img-thumbnail">
+        <img class="gallery_image" src="assets/gallery/img6.jpg" alt="Image 1" class="img-thumbnail">
+        <img class="gallery_image" src="assets/gallery/img7.jpg" alt="Image 1" class="img-thumbnail">
+        <img class="gallery_image" src="assets/gallery/img8.jpg" alt="Image 1" class="img-thumbnail">
+        <img class="gallery_image" src="assets/gallery/img9.jpg" alt="Image 1" class="img-thumbnail">
+        <img class="gallery_image" src="assets/gallery/img10.jpg" alt="Image 1" class="img-thumbnail">
+        <img class="gallery_image" src="assets/gallery/img11.jpg" alt="Image 1" class="img-thumbnail">
+        <img class="gallery_image" src="assets/gallery/img12.jpg" alt="Image 1" class="img-thumbnail">
+        <img class="gallery_image" src="assets/gallery/img13.jpg" alt="Image 1" class="img-thumbnail">
+        <img class="gallery_image" src="assets/gallery/img14.jpg" alt="Image 1" class="img-thumbnail">
+        <img class="gallery_image" src="assets/gallery/img15.jpg" alt="Image 1" class="img-thumbnail">
+        <img class="gallery_image" src="assets/gallery/img16.jpg" alt="Image 1" class="img-thumbnail">
+        <img class="gallery_image" src="assets/gallery/img17.jpg" alt="Image 1" class="img-thumbnail">
+        <img class="gallery_image" src="assets/gallery/img18.jpg" alt="Image 1" class="img-thumbnail">
+        <img class="gallery_image" src="assets/gallery/img19.jpg" alt="Image 1" class="img-thumbnail">
+        <img class="gallery_image" src="assets/gallery/img20.jpg" alt="Image 1" class="img-thumbnail">
+
+    </div>
+
+    <script src="https://unpkg.com/viewerjs/dist/viewer.min.js"></script>
+    <script>
+        const gallery = document.querySelector('.gallery');
+        const viewer = new Viewer(gallery, {
+            // Options for the viewer
+            inline: false,
+            button: true,
+            navbar: true,
+            title: true,
+            toolbar: true,
+            movable: true,
+            rotatable: true,
+            zoomable: true,
+            scalable: true,
+            transition: true,
+            fullscreen: true,
+            // Add more options as needed
+        });
+    </script>
+</body>
+</html>
