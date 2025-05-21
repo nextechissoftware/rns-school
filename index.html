@@ -42,6 +42,11 @@
         .mobile-menu.show {
             transform: translateX(0);
         }
+        @media(max-width: 768px){
+            .principal_message{
+                margin-top: 100px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -49,7 +54,6 @@
      <section class="bg-gray-900 text-white">
         <header class="container mx-auto px-4 md:px-40 py-4 flex items-center justify-between">
             <a href="#" class="flex items-center gap-2">
-               
                  <div class="h-14 w-14 md:h-16 md:w-16 rounded-full overflow-hidden border-2 border-white flex-shrink-0">
                  <img src="assets/logo.jpeg" alt="Logo" class="w-full h-full object-cover" />
                   </div>
@@ -416,7 +420,7 @@
       </div>
 
       <!-- Director Message Right -->
-      <div class="mt-8 md:mt-0 md:flex-1 md:ml-8">
+      <div class="principal_message md:mt-0 md:flex-1 md:ml-8">
         <div class="bg-gray-800 shadow-lg rounded-2xl p-8 md:p-10 border border-gray-200 text-lg">
           <h2 class="text-sky-400 text-2xl font-semibold mb-4">Message from the Director</h2>
           <p class="leading-relaxed mb-4">
@@ -431,7 +435,7 @@
   <div class="message-slide hidden">
     <div class="flex flex-col md:flex-row items-center md:items-start md:gap-x-12 py-10">
       <!-- Principal Message Left -->
-      <div class="md:flex-1 order-2 md:order-1 mt-8 md:mt-0 md:mr-8">
+      <div class="principal_message md:flex-1 order-2 md:order-1 md:mt-0 md:mr-8">
         <div class="bg-gray-800 shadow-lg rounded-2xl p-8 md:p-10 border border-gray-200 text-lg">
           <h2 class="text-sky-400 text-2xl font-semibold mb-4">Message from the Principal</h2>
           <p class="leading-relaxed mb-4">
